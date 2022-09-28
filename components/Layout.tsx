@@ -21,6 +21,7 @@ const Layout = ({ title, description, children }: IProps) => {
       </Head>
 
       <Header />
+
       <main className='min-h-[calc(100vh-6rem)] max-w-7xl mx-auto px-4 py-6'>
         {children}
       </main>

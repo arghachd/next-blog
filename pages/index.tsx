@@ -9,7 +9,6 @@ interface IProps {
 }
 
 const Blogs = ({ blogs }: IProps) => {
-  console.log(blogs)
   return (
     <Layout title='Blogs' description='These are all blogs'>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
