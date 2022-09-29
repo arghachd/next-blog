@@ -95,7 +95,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking', // See the "fallback" section below
   }
 }
 export default Blog
