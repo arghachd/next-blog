@@ -37,12 +37,12 @@ const Signup = () => {
 
   return (
     <Layout title='Signup' description='Register to our app'>
-      <div className='h-screen w-screen flex justify-center items-center px-6'>
+      <div className='flex justify-center items-center'>
         <form
           onSubmit={handleSubmit}
           className='border p-4 flex flex-col shadow-md w-full sm:w-[600px] gap-4'
         >
-          <h1 className='text-center text-3xl font-semibold'>Login Form</h1>
+          <h1 className='text-center text-3xl font-semibold'>Register Form</h1>
           <input
             type='email'
             placeholder='Email'

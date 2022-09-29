@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <Layout title='Login' description='Welcome to our app'>
-      <div className='h-screen w-screen flex justify-center items-center px-6'>
+      <div className='flex justify-center items-center'>
         <form
           onSubmit={handleSubmit}
           className='border p-4 flex flex-col shadow-md w-full sm:w-[600px] gap-4'
