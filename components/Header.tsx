@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className='h-14 sticky top-0 left-0 w-full shadow-md'>
-      <div className='px-6 flex items-center justify-between w-full h-full'>
+      <div className='px-6 xl:px-20 flex items-center justify-between w-full h-full'>
         <Link href='/'>
           <a className='text-3xl font-bold'>
             <h1>ABlog</h1>
