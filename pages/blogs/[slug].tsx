@@ -77,6 +77,7 @@ export const getStaticProps = async ({ params }: any) => {
     // - When a request comes in
     // - At most once every 10 seconds
     revalidate: 10, // In seconds
+    fallback: 'blocking',
   }
 }
 
