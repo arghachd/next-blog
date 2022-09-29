@@ -1,6 +1,7 @@
 import { createClient } from 'contentful'
 import moment from 'moment'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import AuthCheck from '../../components/AuthCheck'
 import Layout from '../../components/Layout'
 import { Blog, Comment } from '../../models'
@@ -13,6 +14,12 @@ const client = createClient({
 })
 
 const Blog = ({ blog }: { blog: Blog }) => {
+  // console.log(blog)
+  // const router = useRouter()
+
+  // if (router.isFallback) {
+  //   return <div>Loading...</div>
+  // }
   return (
     <AuthCheck>
       <Layout title={blog.fields.title} description={blog.fields.description}>
@@ -32,7 +39,7 @@ const Blog = ({ blog }: { blog: Blog }) => {
             </p>
             <div>
               <p className='text-sm font-semibold'>
-                By {blog.fields.author.fields.name}
+                By {blog.fields.author.fields?.name}
               </p>
               <p className='text-xs text-gray-500'>
                 {moment(blog.sys.createdAt).format('MM/DD/YYYY')}
@@ -48,7 +55,7 @@ const Blog = ({ blog }: { blog: Blog }) => {
                   <div className='mb-3' key={comment.sys.id}>
                     <p>{comment.fields.message}</p>
                     <p className='text-sm text-gray-500'>
-                      commented by: {comment.fields.author.fields.name}
+                      commented by: {comment.fields.author.fields?.name}
                     </p>
                   </div>
                 ))}
@@ -77,7 +84,6 @@ export const getStaticProps = async ({ params }: any) => {
     // - When a request comes in
     // - At most once every 10 seconds
     revalidate: 10, // In seconds
-    fallback: 'blocking',
   }
 }
 
