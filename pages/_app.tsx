@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthContextProvider>
       <>
-        <ToastContainer />
+        <ToastContainer position='top-center' />
         <Component {...pageProps} />
       </>
     </AuthContextProvider>

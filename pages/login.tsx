@@ -28,9 +28,9 @@ const Login = () => {
     try {
       await login(formData.email, formData.password)
       router.push('/')
-      toast.success('Redirecting you to homepage')
-    } catch (error) {
-      console.log(error)
+      toast.success('Login successful')
+    } catch (error: any) {
+      toast.error(error?.message)
     }
   }
 

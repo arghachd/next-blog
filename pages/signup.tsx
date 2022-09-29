@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import Layout from '../components/Layout'
 import { useAuth } from '../context/AuthContext'
+import { toast } from 'react-toastify'
 
 interface FormData {
   email: string
@@ -12,7 +13,7 @@ interface FormData {
 const Signup = () => {
   const router = useRouter()
   const { user, signup } = useAuth()
-  console.log(user)
+
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
@@ -28,8 +29,9 @@ const Signup = () => {
     try {
       await signup(formData.email, formData.password)
       router.push('/')
-    } catch (error) {
-      console.log(error)
+      toast.success('Registration successful')
+    } catch (error: any) {
+      toast.error(error?.message)
     }
   }
 
