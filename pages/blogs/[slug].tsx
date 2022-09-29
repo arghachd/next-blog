@@ -14,7 +14,7 @@ const client = createClient({
 })
 
 const Blog = ({ blog }: { blog: Blog }) => {
-  // console.log(blog)
+  console.log(blog)
   // const router = useRouter()
 
   // if (router.isFallback) {
@@ -55,7 +55,10 @@ const Blog = ({ blog }: { blog: Blog }) => {
                   <div className='mb-3' key={comment.sys.id}>
                     <p>{comment.fields.message}</p>
                     <p className='text-sm text-gray-500'>
-                      commented by: {comment.fields.author.fields?.name}
+                      commented by:{' '}
+                      {comment.fields.author.fields?.name
+                        ? comment.fields.author.fields?.name
+                        : comment.fields?.authorName}
                     </p>
                   </div>
                 ))}

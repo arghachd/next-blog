@@ -12,6 +12,7 @@ export interface Author {
 export interface CommentFields {
   message: string
   author: Author
+  authorName: string
 }
 
 export interface Comment {
